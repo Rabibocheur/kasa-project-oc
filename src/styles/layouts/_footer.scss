@@ -1,0 +1,10 @@
+.footer {
+  @extend %flex-column-center;
+  height: 200px;
+  background-color: #000000;
+  color: white;
+
+  img {
+    margin-bottom: 40px;
+  }
+}
