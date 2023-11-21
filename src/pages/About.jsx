@@ -4,7 +4,7 @@ import aboutBanner from "../assets/about-banner.png";
 function About() {
   return (
     <div>
-      <Banner image={aboutBanner} altImg="home banner" />
+      <Banner image={aboutBanner} altImg="about banner" />
     </div>
   );
 }
