@@ -1,13 +1,13 @@
 .header {
-  @extend %container;
   @extend %flex-space-beetween;
 
   &__nav {
-    width: 200px;
+    width: 180px;
     @extend %flex-space-beetween;
 
     a {
       color: $primary-color;
+      text-decoration: none;
     }
 
     .active {

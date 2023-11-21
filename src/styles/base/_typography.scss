@@ -3,21 +3,3 @@
 * {
   font-family: "Montserrat", sans-serif;
 }
-
-.home--title {
-  @include font($s: 24px, $w: 500);
-}
-
-.footer--title,
-.restaurant--title {
-  font-family: "Shrikhand", sans-serif;
-}
-
-.menu--subtitle {
-  font-weight: 300;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-}
