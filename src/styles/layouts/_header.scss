@@ -2,12 +2,13 @@
   @extend %flex-space-beetween;
 
   &__nav {
-    width: 180px;
+    width: 250px;
     @extend %flex-space-beetween;
 
     a {
       color: $primary-color;
       text-decoration: none;
+      @include font($s: 24px, $w: 500);
     }
 
     .active {
