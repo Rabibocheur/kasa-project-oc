@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
+import Location from "./pages/Location";
 import About from "./pages/About";
 import Error from "./pages/Error";
 
@@ -17,6 +18,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/location/:id" element={<Location />} />
             <Route path="/About" element={<About />} />
             <Route path="*" element={<Error />} />
           </Routes>

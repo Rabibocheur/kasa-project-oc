@@ -12,6 +12,20 @@
     height: 340px;
     background-color: $primary-color;
     border-radius: 15px;
+    cursor: pointer;
+    text-decoration: none;
+
+    &__cover {
+      border-radius: 15px 15px 0 0;
+      height: 80%;
+    }
+
+    &__title {
+      @include font($s: 18px, $w: 500);
+      padding: 5px;
+      text-align: center;
+      color: white;
+    }
   }
 }
 
