@@ -6,8 +6,19 @@ function About() {
   return (
     <div>
       <Banner image={aboutBanner} altImg="about banner" />
-      <Collapse title="test" content="test" />
-      <Collapse title="test" content="test" />
+      <Collapse title="test" content="test bnojour comment ca va " />
+      <Collapse
+        title="test"
+        content={[
+          "Climatisation",
+          "Wi-Fi",
+          "Cuisine",
+          "Espace de travail",
+          "Fer à repasser",
+          "Sèche-ch",
+        ]}
+        type="list"
+      />
       <Collapse title="test" content="test" />
     </div>
   );
