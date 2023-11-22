@@ -3,12 +3,19 @@
   position: relative;
   margin-bottom: 25px;
 
+  &--hidden {
+    display: none;
+  }
+
   &__arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     z-index: 1;
     cursor: pointer;
+    background-color: transparent;
+    border: none;
+    @extend %flex-center;
 
     &--back {
       left: 0;
@@ -24,5 +31,15 @@
     width: 100%;
     filter: brightness(0.9);
     border-radius: 25px;
+    object-fit: cover;
+  }
+
+  &__numbering {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    @include font($s: 18px, $w: 500);
+    color: white;
   }
 }

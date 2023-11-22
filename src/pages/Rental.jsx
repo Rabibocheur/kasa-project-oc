@@ -1,5 +1,6 @@
 import Carousel from "../components/Carousel";
 import Collapse from "../components/Collapse";
+import Error from "../pages/Error";
 
 import { useParams } from "react-router-dom";
 import rentals from "../data/rentals.json";
@@ -8,8 +9,10 @@ import inactiveStar from "../assets/star-inactive.png";
 import activeStar from "../assets/star-active.png";
 
 function Rental() {
-  let { id } = useParams();
+  const { id } = useParams();
   const rental = rentals.find((rental) => rental.id === id);
+
+  if (!rental) return <Error />;
 
   let stars = [];
   for (let i = 1; i <= 5; i++) {
@@ -53,7 +56,6 @@ function Rental() {
 
       <div className="rental-detail">
         <Collapse title="Description" text={rental.description} type="text" />
-
         <Collapse title="Équipements" lists={rental.equipments} type="list" />
       </div>
     </div>
