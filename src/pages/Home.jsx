@@ -17,15 +17,15 @@ function Home() {
         {rentals.map((rental) => (
           <Link
             key={`${rental.id}`}
-            className="rentals__article"
+            className="rentals__thumb"
             to={`/rental/${rental.id}`}
           >
             <img
-              className="rentals__article__cover"
+              className="rentals__thumb__cover"
               src={rental.cover}
               alt={rental.title}
             />
-            <h3 className="rentals__article__title">{rental.title}</h3>
+            <h3 className="rentals__thumb__title">{rental.title}</h3>
           </Link>
         ))}
       </section>
