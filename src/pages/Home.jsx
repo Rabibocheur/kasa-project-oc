@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import Banner from "../components/Banner";
 import homeBanner from "../assets/home-banner.png";
-import locations from "../data/locations.json";
+import rentals from "../data/rentals.json";
 
 function Home() {
   return (
@@ -13,19 +13,19 @@ function Home() {
         title="Chez vous, partout et ailleurs"
       />
 
-      <section className="locations">
-        {locations.map((location) => (
+      <section className="rentals">
+        {rentals.map((rental) => (
           <Link
-            key={`${location.id}`}
-            className="locations__article"
-            to={`/location/${location.id}`}
+            key={`${rental.id}`}
+            className="rentals__article"
+            to={`/location/${rental.id}`}
           >
             <img
-              className="locations__article__cover"
-              src={location.cover}
-              alt={location.title}
+              className="rentals__article__cover"
+              src={rental.cover}
+              alt={rental.title}
             />
-            <h3 className="locations__article__title">{location.title}</h3>
+            <h3 className="rentals__article__title">{rental.title}</h3>
           </Link>
         ))}
       </section>

@@ -1,8 +1,8 @@
 import locations from "../data/locations.json";
 import Collapse from "../components/Collapse";
 
-function Location() {
+function Rental() {
   return <div></div>;
 }
 
-export default Location;
+export default Rental;
