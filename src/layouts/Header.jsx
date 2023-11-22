@@ -5,7 +5,7 @@ function Header() {
   return (
     <div>
       <header className="header">
-        <img src={logo}></img>
+        <img className="header__logo" src={logo} alt="logo kasa"></img>
         <nav className="header__nav">
           <NavLink to="/">Accueil</NavLink>
           <NavLink to="/about">A Propos</NavLink>

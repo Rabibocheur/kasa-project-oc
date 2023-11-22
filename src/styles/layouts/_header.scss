@@ -1,6 +1,10 @@
 .header {
   @extend %flex-space-beetween;
 
+  &__logo {
+    height: 68px;
+  }
+
   &__nav {
     width: 250px;
     @extend %flex-space-beetween;
@@ -13,6 +17,21 @@
 
     .active {
       border-bottom: 1px solid $primary-color;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .header {
+    &__logo {
+      height: 46px;
+    }
+    &__nav {
+      width: 130px;
+
+      a {
+        @include font($s: 12px, $w: 500);
+      }
     }
   }
 }
