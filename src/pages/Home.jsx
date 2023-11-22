@@ -7,7 +7,7 @@ function Home() {
       <Banner
         image={homeBanner}
         altImg="home banner"
-        text="Chez vous, partout et ailleurs"
+        title="Chez vous, partout et ailleurs"
       />
       <section className="locations">
         <article className="locations__article">titre de la section</article>

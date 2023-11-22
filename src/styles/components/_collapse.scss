@@ -1,0 +1,48 @@
+.collapse {
+  max-width: 1023px;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 25px;
+  overflow: hidden;
+
+  &__header {
+    @include font($s: 24px, $w: 500);
+    color: white;
+    background-color: $primary-color;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px 10px 15px;
+    border-radius: 5px;
+    height: 52px;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+
+    &__arrow {
+      transition: 0.2s transform;
+
+      &--open {
+        transform: rotate(180deg);
+      }
+
+      &--close {
+        transform: rotate(0);
+      }
+    }
+  }
+
+  &__content {
+    color: $primary-color;
+    background-color: $background-color;
+    border-radius: 0 0 5px 5px;
+    padding: 0px 20px;
+    height: 0;
+    transition: 0.2s all;
+
+    &--visible {
+      padding: 25px 20px;
+      height: auto;
+    }
+  }
+}

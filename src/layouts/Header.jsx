@@ -6,10 +6,10 @@ function Header() {
     <div>
       <header className="header">
         <img src={logo}></img>
-        <div className="header__nav">
+        <nav className="header__nav">
           <NavLink to="/">Accueil</NavLink>
           <NavLink to="/about">A Propos</NavLink>
-        </div>
+        </nav>
       </header>
     </div>
   );
