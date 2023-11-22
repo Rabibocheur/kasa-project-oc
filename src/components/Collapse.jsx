@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import arrowCollapse from "../assets/arrow_collapse.png";
 
-function Collapse({ title, content, type }) {
+function Collapse({ title, text, lists, type }) {
   const [collapse, setCollapse] = useState(false);
 
   const collapseToogle = () => {
@@ -28,10 +28,10 @@ function Collapse({ title, content, type }) {
         </header>
         <article className={`collapse__content ${collapseVisibility}`}>
           {type === "text" ? (
-            content
+            text
           ) : (
             <ul>
-              {content.map((element, index) => (
+              {lists.map((element, index) => (
                 <li key={`${element}-${index}`}>{element}</li>
               ))}
             </ul>
@@ -44,7 +44,8 @@ function Collapse({ title, content, type }) {
 
 Collapse.propTypes = {
   title: PropTypes.string.isRequired,
-  content: PropTypes.string.isRequired,
+  text: PropTypes.string,
+  lists: PropTypes.array,
   type: PropTypes.string.isRequired,
 };
 

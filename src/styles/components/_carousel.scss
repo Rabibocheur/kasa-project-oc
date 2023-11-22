@@ -1,0 +1,28 @@
+.carousel {
+  height: 415px;
+  position: relative;
+  margin-bottom: 25px;
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    cursor: pointer;
+
+    &--back {
+      left: 0;
+    }
+
+    &--forward {
+      right: 0;
+    }
+  }
+
+  &__img {
+    max-height: 100%;
+    width: 100%;
+    filter: brightness(0.9);
+    border-radius: 25px;
+  }
+}

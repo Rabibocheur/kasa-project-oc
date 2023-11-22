@@ -1,8 +1,7 @@
-import Banner from "../components/Banner";
+import Carousel from "../components/Carousel";
 import Collapse from "../components/Collapse";
 
 import { useParams } from "react-router-dom";
-
 import rentals from "../data/rentals.json";
 
 import inactiveStar from "../assets/star-inactive.png";
@@ -20,7 +19,7 @@ function Rental() {
 
   return (
     <div>
-      <Banner image={rental.pictures[0]} altImg="home banner" />
+      <Carousel galerie={rental.pictures} />
 
       <div className="rental">
         <section className="rental__section1">
@@ -53,13 +52,9 @@ function Rental() {
       </div>
 
       <div className="rental-detail">
-        <Collapse
-          title="Description"
-          content={rental.description}
-          type="text"
-        />
+        <Collapse title="Description" text={rental.description} type="text" />
 
-        <Collapse title="Équipements" content={rental.equipments} type="list" />
+        <Collapse title="Équipements" lists={rental.equipments} type="list" />
       </div>
     </div>
   );
