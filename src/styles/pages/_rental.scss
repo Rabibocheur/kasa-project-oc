@@ -36,11 +36,11 @@
       align-items: center;
       flex-direction: row-reverse;
       max-width: 160px;
+      margin-bottom: 25px;
 
       &__picture {
         width: 64px;
         border-radius: 100%;
-        margin-bottom: 25px;
       }
 
       &__name {
@@ -59,8 +59,73 @@
   margin-top: 20px;
 }
 
+@media screen and (max-width: 1000px) {
+  .rental {
+    &__section1 {
+      &__title {
+        @include font($s: 20px, $w: 500);
+      }
+
+      &__location {
+        @include font($s: 16px, $w: 500);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .rental {
+    flex-wrap: wrap;
+
+    &__section1 {
+      &__title {
+        @include font($s: 18px, $w: 500);
+      }
+
+      &__location {
+        @include font($s: 14px, $w: 500);
+        margin: 15px 0;
+      }
+
+      &__tags {
+        flex-wrap: wrap;
+
+        &--tag {
+          margin: 5px;
+          margin-left: 0;
+        }
+      }
+    }
+
+    &__section2 {
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+      margin: 20px 0;
+
+      &__host {
+        margin: 0;
+      }
+
+      &__rating {
+        img {
+          height: 30px;
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 900px) {
   .rental-detail {
     grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .rental-detail {
+    margin-top: 0;
   }
 }

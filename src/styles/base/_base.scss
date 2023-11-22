@@ -1,12 +1,9 @@
 $primary-color: #ff6060;
 $background-color: #f6f6f6;
 
-#root {
-  padding: 45px 0 0 0;
-}
-
 .header {
   @extend %container;
+  padding-top: 50px;
 }
 
 main {
@@ -15,14 +12,13 @@ main {
 }
 
 @media screen and (max-width: 1300px) {
-  #root {
+  .header {
+    padding-top: 25px;
     padding-left: 20px;
     padding-right: 20px;
   }
-}
 
-@media screen and (max-width: 550px) {
   main {
-    padding: 25px 0;
+    padding: 25px 20px;
   }
 }
