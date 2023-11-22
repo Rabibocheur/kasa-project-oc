@@ -18,7 +18,7 @@ function Home() {
           <Link
             key={`${rental.id}`}
             className="rentals__article"
-            to={`/location/${rental.id}`}
+            to={`/rental/${rental.id}`}
           >
             <img
               className="rentals__article__cover"
