@@ -1,24 +1,19 @@
-import Carousel from "../components/Carousel";
-import Collapse from "../components/Collapse";
-import Error from "../pages/Error";
-
 import { useParams } from "react-router-dom";
 import rentals from "../data/rentals.json";
 
-import inactiveStar from "../assets/star-inactive.png";
-import activeStar from "../assets/star-active.png";
+import Carousel from "../components/Carousel";
+import Collapse from "../components/Collapse";
+import Rating from "../components/Rating";
+
+import Error from "../pages/Error";
 
 function Rental() {
   const { id } = useParams();
   const rental = rentals.find((rental) => rental.id === id);
 
-  if (!rental) return <Error />;
+  console.log(rental);
 
-  let stars = [];
-  for (let i = 1; i <= 5; i++) {
-    if (i <= rental.rating) stars.push(activeStar);
-    else stars.push(inactiveStar);
-  }
+  if (!rental) return <Error />;
 
   return (
     <div>
@@ -26,7 +21,7 @@ function Rental() {
 
       <div className="rental">
         <section className="rental__section1">
-          <h2 className="rental__section1__title">{rental.title}</h2>
+          <h1 className="rental__section1__title">{rental.title}</h1>
           <h3 className="rental__section1__location">{rental.location}</h3>
           <div className="rental__section1__tags">
             {rental.tags.map((tag) => (
@@ -47,9 +42,7 @@ function Rental() {
             <p className="rental__section2__host__name">{rental.host.name}</p>
           </div>
           <div className="rental__section2__rating">
-            {stars.map((star, index) => (
-              <img key={`start-${index}`} src={star}></img>
-            ))}
+            <Rating rates={rental.rating} />
           </div>
         </section>
       </div>
