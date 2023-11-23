@@ -1,41 +1,31 @@
-import aboutBanner from "../assets/about-banner.png";
+import Error from "../pages/Error";
 import Banner from "../components/Banner";
 import Collapse from "../components/Collapse";
 
+import aboutBanner from "../assets/about-banner.png";
+
+import { useFetch } from "../utils/hooks";
+
 function About() {
+  const { data, isLoading, error } = useFetch("../../public/data/about.json");
+
+  if (error) return <Error />;
+
   return (
     <div>
       <Banner image={aboutBanner} altImg="about banner" />
-      <Collapse
-        title="Fiabilité"
-        text={`
-        Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont
-        régulièrement vérifiées par nos équipes.`}
-        type="text"
-      />
-      <Collapse
-        title="Respect"
-        text={`
-        La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de
-        perturbation du voisinage entraînera une exclusion de notre plateforme.`}
-        type="text"
-      />
-      <Collapse
-        title="Service"
-        text={`
-        La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de
-        perturbation du voisinage entraînera une exclusion de notre plateforme.`}
-        type="text"
-      />
-      <Collapse
-        title="Sécurité"
-        text={`
-        La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement
-        correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l'hôte qu'au
-        locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons
-        également des ateliers sur la sécurité domestique pour nos hôtes.`}
-        type="text"
-      />
+      {isLoading ? (
+        <h1>Chargement...</h1>
+      ) : (
+        data.map((el, index) => (
+          <Collapse
+            key={`${el.title}-${index}`}
+            title={el.title}
+            text={el.text}
+            type="text"
+          />
+        ))
+      )}
     </div>
   );
 }
