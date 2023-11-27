@@ -37,7 +37,7 @@ Paul, le designer, vous a fourni des informations clés sur le design et les fon
 - Développement des routes d'une application web avec React Router.
 - Initialisation d'une application web avec un framework (utilisation de Vite et React).
 
-- ## Installation du Projet
+## Installation du Projet
 
 Pour essayer le projet, exécutez les commandes suivantes :
 ```bash
